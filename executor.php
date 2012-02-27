@@ -41,8 +41,6 @@ try {
     error_reporting(E_ALL);
 
     $application->getBootstrap()->bootstrap('autoload');
-    $application->getBootstrap()->bootstrap('params');
-    $application->getBootstrap()->bootstrap('doctrine');
 
     if ($_SERVER['argc'] === 1) {
         throw new Exception("CronJob is not specified");
