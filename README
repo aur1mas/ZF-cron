@@ -1,5 +1,7 @@
 Zend Framework style CronJob executor.
 
+Place it in "scripts/jobs" folder.
+ 
 excution example:
 php executor.php ENVIRONMENT_NAME JOB_NAME
 php executor.php development import
