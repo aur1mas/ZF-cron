@@ -12,26 +12,29 @@ class Job_Abstract
      * @var array
      */
     protected $_params;
+    
+    /**
+     * default logger
+     *
+     * @var string
+     */
+    protected $_logger = null;
 
     public function __construct(array $params = array())
     {
         $this->_params = $params;
+        
+        $this->_logger = new Zend_Log(new Zend_Log_Writer_Stream("php://output"));
     }
     
     /**
-     * handle catched exception
+     * get logger
      *
-     * @param Job_Exception $e 
-     * @return void
+     * @return Zend_Log
      * @author aur1mas <aur1mas@devnet.lt>
      */
-    protected function _handleException(Exception $e)
+    public function getLogger()
     {
-        $mail = new Zend_Mail('utf-8');
-        $mail->addTo(Zend_Registry::get('params')->email->debug);
-        $mail->setFrom('no-reply@cronjob');
-        $mail->setSubject(APPLICATION_ENV . ': ' . get_class($this));
-        $mail->setBodyHtml($e->getMessage());
-        $mail->send();
-    }
+        return $this->_logger;
+    }    
 }

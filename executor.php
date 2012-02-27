@@ -92,14 +92,7 @@ class CronJob
             $message = "Exception: " . $e->getMessage() . "\r\n\r\n";
             $message .= "Stack Trace: " . "\r\n" . $e->getTraceAsString() . "\r\n\r\n";
             
-            $mail = new Zend_Mail('utf-8');
-            $mail->addTo(Zend_Registry::get('params')->email->debug);
-            $mail->setFrom('no-reply@cronjob');
-            $mail->setSubject(APPLICATION_ENV . ': CronJob [generic]');
-            $mail->setBodyHtml($message);
-            $mail->send();
-            
-            echo $e->getMessage() . "\r\n";
+            echo $message . "\r\n";
         }
     }
 }
