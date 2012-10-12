@@ -6,9 +6,9 @@ Zend Framework (version 1.*) style job executor in CLI.
 Instaliation
 ============
 
-Place executor.php in "scripts/jobs" folder.
+Copy files & directories structure (from scripts) to your Zend Framework scripts/.
  
-excution example:
+Excution example:
     php executor.php ENVIRONMENT_NAME JOB_NAME
     php executor.php development example
 
