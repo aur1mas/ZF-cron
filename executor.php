@@ -77,8 +77,6 @@ class CronJob
             throw new Exception("CronJob: '" . $name . "' doesn't exist");
         }
 
-        require_once 'job/Abstract.php';
-        require_once 'job/Interface.php';
         require_once 'job/' . ucfirst($name) . '.php';
 
         $class = implode('_', explode(DIRECTORY_SEPARATOR, $name));
