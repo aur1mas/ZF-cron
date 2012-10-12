@@ -1,0 +1,14 @@
+{
+    "name": "aur1mas/zf-cron",
+    "type": "library",
+    "description": "Jobs executor for ZF1",
+    "authors": [
+        {"name": "Aurimas Baubkus", "email": "aurimas@devnet.lt"}
+    ],
+    "autoload": {
+        "psr-0": { "Job_": "library"}
+    },
+    "include-path": [
+        "library/"
+    ]
+}

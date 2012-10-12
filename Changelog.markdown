@@ -2,6 +2,7 @@
 =====
 
 * changed directory structure. Abstract code moved to library folder.
+* add composer.org
 
 0.1.0
 =====
