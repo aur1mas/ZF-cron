@@ -2,7 +2,6 @@
 /**
  * @package Cron
  * @author aur1mas <aur1mas@devnet.lt>
- * @copyright pozicijos.lt <info@pozicijos.lt>
  */
 ini_set('memory_limit', '512M');
 
@@ -10,6 +9,8 @@ ini_set('memory_limit', '512M');
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../../application'));
+
+require APPLICATION_PATH . '/../vendor/autoload.php';
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -37,13 +38,10 @@ try {
         APPLICATION_PATH . '/configs/application.ini'
     );
 
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-
-    $application->getBootstrap()->bootstrap('autoload');
+    $application->getBootstrap()->bootstrap();
 
     if ($_SERVER['argc'] === 1) {
-        throw new Exception("Job is not specified");
+        throw new Exception("CronJob is not specified");
     }
 
     $cronName = array_shift($_SERVER['argv']);

@@ -1,4 +1,4 @@
-Version 1.0.0
+Version 1.0.1
 =============
 
 Zend Framework (version 1.*) style job executor in CLI.
@@ -6,7 +6,13 @@ Zend Framework (version 1.*) style job executor in CLI.
 Instaliation
 ============
 
-Copy files & directories structure (from scripts) to your Zend Framework scripts/.
+Install through Composer:
+
+    {
+        "aur1mas/zf-cron": "dev-master"
+    }
+
+Copy files & directories structure from scripts/ to your Zend Framework scripts/.
  
 Excution example:
 
